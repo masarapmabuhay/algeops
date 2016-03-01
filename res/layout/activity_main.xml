@@ -47,6 +47,7 @@
 	        android:layout_weight="40"/>
 	</LinearLayout>
     <LinearLayout 
+        android:id="@+id/top_row_2"
 	    android:layout_width="match_parent"
 	    android:layout_height="wrap_content"
 	    android:weightSum="100" 
@@ -62,7 +63,7 @@
 		    <ImageView 
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
-				android:background="@drawable/box"
+				android:background="@drawable/box_blue"
 				android:layout_marginRight="20dp"
 				android:layout_centerHorizontal="true"
 				android:id="@+id/left_box"				
@@ -115,25 +116,25 @@
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-					android:background="@drawable/box"
+					android:background="@drawable/box_blue"
 					android:layout_weight="10"
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-					android:background="@drawable/box"
+					android:background="@drawable/box_blue"
 					android:layout_weight="10"
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-					android:background="@drawable/box"
+					android:background="@drawable/box_blue"
 					android:layout_weight="10"
 			        />		   	   
 			    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-					android:background="@drawable/box"
+					android:background="@drawable/box_blue"
 					android:layout_weight="10"
 			        />		   	   		   	    
 	   		</LinearLayout>	    
@@ -145,25 +146,25 @@
 			   	    <ImageView 
 				        android:layout_width="wrap_content"
 				        android:layout_height="wrap_content"
-						android:background="@drawable/box"
+						android:background="@drawable/box_blue"
 						android:layout_weight="10"
 				        />
 			   	    <ImageView 
 				        android:layout_width="wrap_content"
 				        android:layout_height="wrap_content"
-						android:background="@drawable/box"
+						android:background="@drawable/box_blue"
 						android:layout_weight="10"
 				        />
 			   	    <ImageView 
 				        android:layout_width="wrap_content"
 				        android:layout_height="wrap_content"
-						android:background="@drawable/box"
+						android:background="@drawable/box_blue"
 						android:layout_weight="10"
 				        />		   	   
 				    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-					android:background="@drawable/box"
+					android:background="@drawable/box_blue"
 					android:layout_weight="10"
 			        />		   	   		   	    
 			</LinearLayout>
@@ -183,25 +184,25 @@
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-					android:background="@drawable/box"
+					android:background="@drawable/box_blue"
 					android:layout_weight="10"
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-					android:background="@drawable/box"
+					android:background="@drawable/box_blue"
 					android:layout_weight="10"
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-					android:background="@drawable/box"
+					android:background="@drawable/box_blue"
 					android:layout_weight="10"
 			        />		   	   
 			    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-					android:background="@drawable/box"
+					android:background="@drawable/box_blue"
 					android:layout_weight="10"
 			        />		   	   		   	    
 		   </LinearLayout>
@@ -213,25 +214,25 @@
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-					android:background="@drawable/box"
+					android:background="@drawable/box_blue"
 					android:layout_weight="10"
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-					android:background="@drawable/box"
+					android:background="@drawable/box_blue"
 					android:layout_weight="10"
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-					android:background="@drawable/box"
+					android:background="@drawable/box_blue"
 					android:layout_weight="10"
 			        />		   	   
 			    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-					android:background="@drawable/box"
+					android:background="@drawable/box_blue"
 					android:layout_weight="10"
 			        />		   	   		   	    
 			</LinearLayout>
@@ -244,7 +245,7 @@
 		    <ImageView 
 		        android:layout_width="wrap_content"
 		        android:layout_height="wrap_content"
-				android:background="@drawable/box"
+				android:background="@drawable/box_blue"
 				android:layout_centerHorizontal="true"
 				android:layout_marginLeft="20dp"
 				android:id="@+id/right_box"
@@ -284,4 +285,241 @@
 		        />		   		   			        
 		</RelativeLayout>        		
     </LinearLayout>
+    <LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:weightSum="100" 
+	    android:layout_below="@+id/top_row_2"
+	    android:gravity="center_horizontal"
+	    android:orientation="horizontal">    
+	   	<RelativeLayout 
+		   android:layout_width="wrap_content"
+		   android:layout_height="wrap_content"
+		   android:orientation="vertical"
+		   android:weightSum="10">
+		    <ImageView 
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+				android:background="@drawable/balloon_blue"
+				android:layout_marginRight="20dp"
+				android:layout_centerHorizontal="true"
+				android:id="@+id/left_balloon"				
+		        />
+	    	<Button 
+				android:layout_width="wrap_content"	        
+				android:layout_height="wrap_content"	        
+				android:background="@drawable/circle_border"
+				android:text="+"
+		        android:gravity="center"
+		        android:minWidth="0dp"	    
+		        android:minHeight="0dp"
+		        android:padding="6dp"	    		            
+		        android:textSize="16sp"
+		        android:layout_below="@+id/left_balloon"
+		        android:id="@+id/left_balloon_plus_button"
+		        android:layout_marginLeft="4dp"	   
+		        android:layout_marginTop="4dp"	   		        
+		        android:layout_alignParentLeft="true"     		        	        
+		        />
+		    <Button 
+				android:layout_width="wrap_content"	        
+				android:layout_height="wrap_content"	        
+				android:background="@drawable/circle_border"
+				android:text="--"
+		        android:gravity="center"
+		        android:minWidth="0dp"	
+		        android:minHeight="0dp"	    		        
+		        android:padding="6dp"	    		            	        
+		        android:textSize="16sp"	        		        
+		        android:layout_below="@+id/left_balloon"
+		        android:layout_toRightOf="@+id/left_balloon_plus_button"
+		        android:layout_marginLeft="4dp"	        		        	        		        
+		        android:layout_marginTop="4dp"	        
+		        android:layout_marginRight="4dp"	        
+		        />
+		</RelativeLayout>        
+		<LinearLayout 
+		   android:id="@+id/bottom_left_white_background"
+		   android:layout_width="wrap_content"
+		   android:layout_height="wrap_content"
+		   android:background="@drawable/rect_border"
+		   android:weightSum="40" 
+		   android:padding="10dp"
+		   android:orientation="vertical">
+		   <LinearLayout 
+			   android:layout_width="wrap_content"
+			   android:layout_height="wrap_content"
+			   android:orientation="horizontal">        		    
+		   	    <ImageView 
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+					android:background="@drawable/balloon_blue"
+					android:layout_weight="10"
+			        />
+		   	    <ImageView 
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+					android:background="@drawable/balloon_blue"
+					android:layout_weight="10"
+			        />
+		   	    <ImageView 
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+					android:background="@drawable/balloon_blue"
+					android:layout_weight="10"
+			        />		   	   
+			    <ImageView 
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+					android:background="@drawable/balloon_blue"
+					android:layout_weight="10"
+			        />		   	   		   	    
+	   		</LinearLayout>	    
+			<LinearLayout 
+			   android:layout_width="wrap_content"
+			   android:layout_height="wrap_content"
+			   android:orientation="horizontal"
+			   android:paddingTop="10dp">        
+			   	    <ImageView 
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+						android:background="@drawable/balloon_blue"
+						android:layout_weight="10"
+				        />
+			   	    <ImageView 
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+						android:background="@drawable/balloon_blue"
+						android:layout_weight="10"
+				        />
+			   	    <ImageView 
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+						android:background="@drawable/balloon_blue"
+						android:layout_weight="10"
+				        />		   	   
+				    <ImageView 
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+					android:background="@drawable/balloon_blue"
+					android:layout_weight="10"
+			        />		   	   		   	    
+			</LinearLayout>
+		</LinearLayout>	
+		<LinearLayout 
+		   android:id="@+id/bottom_right_white_background"
+		   android:layout_width="wrap_content"
+		   android:layout_height="wrap_content"
+		   android:background="@drawable/rect_border"
+		   android:weightSum="40" 
+		   android:padding="10dp"
+		   android:orientation="vertical">
+		   <LinearLayout 
+		   android:layout_width="wrap_content"
+		   android:layout_height="wrap_content"
+		   android:orientation="horizontal">        
+		   	    <ImageView 
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+					android:background="@drawable/balloon_blue"
+					android:layout_weight="10"
+			        />
+		   	    <ImageView 
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+					android:background="@drawable/balloon_blue"
+					android:layout_weight="10"
+			        />
+		   	    <ImageView 
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+					android:background="@drawable/balloon_blue"
+					android:layout_weight="10"
+			        />		   	   
+			    <ImageView 
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+					android:background="@drawable/balloon_blue"
+					android:layout_weight="10"
+			        />		   	   		   	    
+		   </LinearLayout>
+		   <LinearLayout 
+		   android:layout_width="wrap_content"
+		   android:layout_height="wrap_content"
+		   android:orientation="horizontal"
+		   android:paddingTop="10dp">        
+		   	    <ImageView 
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+					android:background="@drawable/balloon_blue"
+					android:layout_weight="10"
+			        />
+		   	    <ImageView 
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+					android:background="@drawable/balloon_blue"
+					android:layout_weight="10"
+			        />
+		   	    <ImageView 
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+					android:background="@drawable/balloon_blue"
+					android:layout_weight="10"
+			        />		   	   
+			    <ImageView 
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+					android:background="@drawable/balloon_blue"
+					android:layout_weight="10"
+			        />		   	   		   	    
+			</LinearLayout>
+		</LinearLayout>
+	   	<RelativeLayout 
+		   android:layout_width="wrap_content"
+		   android:layout_height="wrap_content"
+		   android:orientation="vertical"
+		   android:weightSum="10">
+		    <ImageView 
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+				android:background="@drawable/balloon_blue"
+				android:layout_centerHorizontal="true"
+				android:layout_marginLeft="20dp"
+				android:id="@+id/right_balloon"
+		        />	
+		    <Button 
+				android:layout_width="wrap_content"	        
+				android:layout_height="wrap_content"	        
+				android:background="@drawable/circle_border"
+				android:text="--"
+		        android:gravity="center"
+		        android:minWidth="0dp"	    
+		        android:minHeight="0dp"
+		        android:padding="6dp"	    		            
+		        android:textSize="16sp"
+		        android:layout_below="@+id/right_balloon"
+		        android:id="@+id/right_balloon_minus_button"
+		        android:layout_marginRight="4dp"	        		        
+		        android:layout_marginTop="4dp"	   
+		        android:layout_toRightOf="@+id/right_balloon_plus_button"
+		        />	    
+			<Button 
+			    android:id="@+id/right_balloon_plus_button"
+				android:layout_width="wrap_content"	        
+				android:layout_height="wrap_content"	        
+				android:background="@drawable/circle_border"
+				android:text="+"
+		        android:gravity="center"
+		        android:minWidth="0dp"	
+		        android:minHeight="0dp"	    		        
+		        android:padding="6dp"	    		            	        
+		        android:textSize="16sp"	        		        
+		        android:layout_below="@+id/right_balloon"
+		        android:layout_alignParentLeft="true"
+		        android:layout_marginTop="4dp"	        
+		        android:layout_marginRight="4dp"
+		        android:layout_marginLeft="4dp"		        	        
+		        />		   		   			        
+		</RelativeLayout>        		
+    </LinearLayout>    
 </RelativeLayout>

@@ -1901,10 +1901,15 @@ containing a value of this type.
         public static final int abc_textfield_search_activated_mtrl_alpha=0x7f020038;
         public static final int abc_textfield_search_default_mtrl_alpha=0x7f020039;
         public static final int abc_textfield_search_material=0x7f02003a;
-        public static final int box=0x7f02003b;
-        public static final int circle_border=0x7f02003c;
-        public static final int ic_launcher=0x7f02003d;
-        public static final int rect_border=0x7f02003e;
+        public static final int balloon_blue=0x7f02003b;
+        public static final int balloon_green=0x7f02003c;
+        public static final int balloon_red=0x7f02003d;
+        public static final int box_blue=0x7f02003e;
+        public static final int box_green=0x7f02003f;
+        public static final int box_red=0x7f020040;
+        public static final int circle_border=0x7f020041;
+        public static final int ic_launcher=0x7f020042;
+        public static final int rect_border=0x7f020043;
     }
     public static final class id {
         public static final int action_bar=0x7f050040;
@@ -1920,11 +1925,13 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f05003d;
         public static final int action_mode_bar_stub=0x7f05003c;
         public static final int action_mode_close_button=0x7f050025;
-        public static final int action_settings=0x7f050057;
+        public static final int action_settings=0x7f05005f;
         public static final int activity_chooser_view_content=0x7f050026;
         public static final int alertTitle=0x7f050030;
         public static final int always=0x7f050012;
         public static final int beginning=0x7f050017;
+        public static final int bottom_left_white_background=0x7f05005a;
+        public static final int bottom_right_white_background=0x7f05005b;
         public static final int buttonPanel=0x7f050036;
         public static final int checkbox=0x7f050038;
         public static final int collapseActionView=0x7f050014;
@@ -1945,8 +1952,10 @@ containing a value of this type.
         public static final int icon=0x7f05002b;
         public static final int ifRoom=0x7f050011;
         public static final int image=0x7f050028;
-        public static final int left_box=0x7f050050;
-        public static final int left_box_plus_button=0x7f050051;
+        public static final int left_balloon=0x7f050058;
+        public static final int left_balloon_plus_button=0x7f050059;
+        public static final int left_box=0x7f050051;
+        public static final int left_box_plus_button=0x7f050052;
         public static final int listMode=0x7f050002;
         public static final int list_item=0x7f05002a;
         public static final int middle=0x7f050018;
@@ -1958,9 +1967,12 @@ containing a value of this type.
         public static final int progress_circular=0x7f050021;
         public static final int progress_horizontal=0x7f050022;
         public static final int radio=0x7f05003a;
-        public static final int right_box=0x7f050054;
-        public static final int right_box_minus_button=0x7f050055;
-        public static final int right_box_plus_button=0x7f050056;
+        public static final int right_balloon=0x7f05005c;
+        public static final int right_balloon_minus_button=0x7f05005d;
+        public static final int right_balloon_plus_button=0x7f05005e;
+        public static final int right_box=0x7f050055;
+        public static final int right_box_minus_button=0x7f050056;
+        public static final int right_box_plus_button=0x7f050057;
         public static final int screen=0x7f05000f;
         public static final int scrollView=0x7f050032;
         public static final int search_badge=0x7f050044;
@@ -1988,9 +2000,10 @@ containing a value of this type.
         public static final int title=0x7f05002c;
         public static final int title_template=0x7f05002f;
         public static final int topPanel=0x7f05002e;
-        public static final int top_left_white_background=0x7f050052;
-        public static final int top_right_white_background=0x7f050053;
+        public static final int top_left_white_background=0x7f050053;
+        public static final int top_right_white_background=0x7f050054;
         public static final int top_row=0x7f05004f;
+        public static final int top_row_2=0x7f050050;
         public static final int up=0x7f05001b;
         public static final int useLogo=0x7f050005;
         public static final int withText=0x7f050013;
