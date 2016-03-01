@@ -420,7 +420,7 @@ int id action_menu_presenter 0x7f050020
 int id action_mode_bar 0x7f05003d
 int id action_mode_bar_stub 0x7f05003c
 int id action_mode_close_button 0x7f050025
-int id action_settings 0x7f050052
+int id action_settings 0x7f050057
 int id activity_chooser_view_content 0x7f050026
 int id alertTitle 0x7f050030
 int id always 0x7f050012
@@ -445,6 +445,8 @@ int id homeAsUp 0x7f050007
 int id icon 0x7f05002b
 int id ifRoom 0x7f050011
 int id image 0x7f050028
+int id left_box 0x7f050050
+int id left_box_plus_button 0x7f050051
 int id listMode 0x7f050002
 int id list_item 0x7f05002a
 int id middle 0x7f050018
@@ -456,6 +458,9 @@ int id parentPanel 0x7f05002d
 int id progress_circular 0x7f050021
 int id progress_horizontal 0x7f050022
 int id radio 0x7f05003a
+int id right_box 0x7f050054
+int id right_box_minus_button 0x7f050055
+int id right_box_plus_button 0x7f050056
 int id screen 0x7f05000f
 int id scrollView 0x7f050032
 int id search_badge 0x7f050044
@@ -483,8 +488,8 @@ int id textSpacerNoButtons 0x7f050033
 int id title 0x7f05002c
 int id title_template 0x7f05002f
 int id topPanel 0x7f05002e
-int id top_left_white_background 0x7f050050
-int id top_right_white_background 0x7f050051
+int id top_left_white_background 0x7f050052
+int id top_right_white_background 0x7f050053
 int id top_row 0x7f05004f
 int id up 0x7f05001b
 int id useLogo 0x7f050005
