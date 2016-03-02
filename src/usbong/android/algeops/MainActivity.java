@@ -20,14 +20,20 @@ public class MainActivity extends ActionBarActivity {
 	private int currTotalBalloonNumRight=0;	
 	
 	private int currTotalBoxNumLeftCounter=0;
+	private int currTotalBoxNumRightCounter=0;
+	private int currTotalBalloonNumLeftCounter=0;
+	private int currTotalBalloonNumRightCounter=0;
 	
 	private int leftBoxOffset=0;
-	
+	private int rightBoxOffset=0;
+	private int leftBalloonOffset=0;
+	private int rightBalloonOffset=0;
+
 	private ImageView[] leftBox;
-	
-	private boolean leftBoxLastPressedPlus;
-	private int leftBoxCounterThreshold=0;
-	
+	private ImageView[] rightBox;
+	private ImageView[] leftBalloon;
+	private ImageView[] rightBalloon;
+		
 	private Button leftBoxPlusButton;
 	private Button leftBoxMinusButton;
 	private Button rightBoxPlusButton;
@@ -48,14 +54,30 @@ public class MainActivity extends ActionBarActivity {
 	
 	public void init() {
 		leftBox = new ImageView[MAX_BOX];
+		rightBox = new ImageView[MAX_BOX];
+		leftBalloon = new ImageView[MAX_BALLOON];
+		rightBalloon = new ImageView[MAX_BALLOON];
+
 		int tempI;
 		int resId;
 		for (int i=0; i<MAX_BOX; i++) {
 			tempI = i+1;
 			resId = getResources().getIdentifier("left_box_" + tempI, "id", getPackageName());
 			leftBox[i] = (ImageView)findViewById(resId);    	
+			
+			resId = getResources().getIdentifier("right_box_" + tempI, "id", getPackageName());
+			rightBox[i] = (ImageView)findViewById(resId);    	
+
+			resId = getResources().getIdentifier("left_balloon_" + tempI, "id", getPackageName());
+			leftBalloon[i] = (ImageView)findViewById(resId);    	
+			
+			resId = getResources().getIdentifier("right_balloon_" + tempI, "id", getPackageName());
+			rightBalloon[i] = (ImageView)findViewById(resId);    	
 		}
 		
+		//-----------------------------------------------------------------------
+		//Left Box
+		//-----------------------------------------------------------------------		
     	leftBoxPlusButton = (Button)findViewById(R.id.left_box_plus_button);    	
     	leftBoxPlusButton.setOnClickListener(new OnClickListener() {
 			@Override
@@ -112,6 +134,182 @@ public class MainActivity extends ActionBarActivity {
 			}
     	});
 
+		//-----------------------------------------------------------------------
+		//Right Box
+		//-----------------------------------------------------------------------		
+    	rightBoxPlusButton = (Button)findViewById(R.id.right_box_plus_button);    	
+    	rightBoxPlusButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (Math.abs(currTotalBoxNumRight)<=MAX_BOX) {
+					currTotalBoxNumRight++;
+					if (currTotalBoxNumRight>0) { //positive
+						rightBoxOffset=1;
+					}
+					else {
+						rightBoxOffset=0;						
+					}
+					if (Math.abs(currTotalBoxNumRight)>=MAX_BOX) {
+						currTotalBoxNumRight=MAX_BOX;
+					}
+					currTotalBoxNumRightCounter=Math.abs(currTotalBoxNumRight)-rightBoxOffset;						
+					
+					if (currTotalBoxNumRight>0) { //if there are green boxes left						
+						rightBox[currTotalBoxNumRightCounter].setBackground(getResources().getDrawable(getResources().getIdentifier("box_green", "drawable", getPackageName())));					
+						rightBox[currTotalBoxNumRightCounter].setVisibility(ImageView.VISIBLE);					
+					}
+					else {
+						rightBox[currTotalBoxNumRightCounter].setVisibility(ImageView.INVISIBLE);
+					}										
+				}
+			}
+    	});
+    	
+    	rightBoxMinusButton = (Button)findViewById(R.id.right_box_minus_button);    	
+    	rightBoxMinusButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (Math.abs(currTotalBoxNumRight)<=MAX_BOX) {
+					currTotalBoxNumRight--;
+					if (currTotalBoxNumRight>=0) { //positive + 0
+						rightBoxOffset=0;
+					}
+					else {
+						rightBoxOffset=1;						
+					}
+					if (Math.abs(currTotalBoxNumRight)>=MAX_BOX) {
+						currTotalBoxNumRight=-(MAX_BOX);
+					}
+					currTotalBoxNumRightCounter=Math.abs(currTotalBoxNumRight)-rightBoxOffset;						
+
+					if (currTotalBoxNumRight>=0) { //if there are green boxes left						
+						rightBox[currTotalBoxNumRightCounter].setVisibility(ImageView.INVISIBLE);					
+					}
+					else {
+						rightBox[currTotalBoxNumRightCounter].setBackground(getResources().getDrawable(getResources().getIdentifier("box_red", "drawable", getPackageName())));					
+						rightBox[currTotalBoxNumRightCounter].setVisibility(ImageView.VISIBLE);
+					}										
+				}
+			}
+    	});
+
+		//-----------------------------------------------------------------------
+		//Left Balloon
+		//-----------------------------------------------------------------------		
+    	leftBalloonPlusButton = (Button)findViewById(R.id.left_balloon_plus_button);    	
+    	leftBalloonPlusButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (Math.abs(currTotalBalloonNumLeft)<=MAX_BALLOON) {
+					currTotalBalloonNumLeft++;
+					if (currTotalBalloonNumLeft>0) { //positive
+						leftBalloonOffset=1;
+					}
+					else {
+						leftBalloonOffset=0;						
+					}
+					if (Math.abs(currTotalBalloonNumLeft)>=MAX_BALLOON) {
+						currTotalBalloonNumLeft=MAX_BALLOON;
+					}
+					currTotalBalloonNumLeftCounter=Math.abs(currTotalBalloonNumLeft)-leftBalloonOffset;						
+					
+					if (currTotalBalloonNumLeft>0) { //if there are green balloones left						
+						leftBalloon[currTotalBalloonNumLeftCounter].setBackground(getResources().getDrawable(getResources().getIdentifier("balloon_green", "drawable", getPackageName())));					
+						leftBalloon[currTotalBalloonNumLeftCounter].setVisibility(ImageView.VISIBLE);					
+					}
+					else {
+						leftBalloon[currTotalBalloonNumLeftCounter].setVisibility(ImageView.INVISIBLE);
+					}										
+				}
+			}
+    	});
+    	
+    	leftBalloonMinusButton = (Button)findViewById(R.id.left_balloon_minus_button);    	
+    	leftBalloonMinusButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (Math.abs(currTotalBalloonNumLeft)<=MAX_BALLOON) {
+					currTotalBalloonNumLeft--;
+					if (currTotalBalloonNumLeft>=0) { //positive + 0
+						leftBalloonOffset=0;
+					}
+					else {
+						leftBalloonOffset=1;						
+					}
+					if (Math.abs(currTotalBalloonNumLeft)>=MAX_BALLOON) {
+						currTotalBalloonNumLeft=-(MAX_BALLOON);
+					}
+					currTotalBalloonNumLeftCounter=Math.abs(currTotalBalloonNumLeft)-leftBalloonOffset;						
+
+					if (currTotalBalloonNumLeft>=0) { //if there are green balloones left						
+						leftBalloon[currTotalBalloonNumLeftCounter].setVisibility(ImageView.INVISIBLE);					
+					}
+					else {
+						leftBalloon[currTotalBalloonNumLeftCounter].setBackground(getResources().getDrawable(getResources().getIdentifier("balloon_red", "drawable", getPackageName())));					
+						leftBalloon[currTotalBalloonNumLeftCounter].setVisibility(ImageView.VISIBLE);
+					}										
+				}
+			}
+    	});
+
+		//-----------------------------------------------------------------------
+		//Right Balloon
+		//-----------------------------------------------------------------------		
+    	rightBalloonPlusButton = (Button)findViewById(R.id.right_balloon_plus_button);    	
+    	rightBalloonPlusButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (Math.abs(currTotalBalloonNumRight)<=MAX_BALLOON) {
+					currTotalBalloonNumRight++;
+					if (currTotalBalloonNumRight>0) { //positive
+						rightBalloonOffset=1;
+					}
+					else {
+						rightBalloonOffset=0;						
+					}
+					if (Math.abs(currTotalBalloonNumRight)>=MAX_BALLOON) {
+						currTotalBalloonNumRight=MAX_BALLOON;
+					}
+					currTotalBalloonNumRightCounter=Math.abs(currTotalBalloonNumRight)-rightBalloonOffset;						
+					
+					if (currTotalBalloonNumRight>0) { //if there are green balloones left						
+						rightBalloon[currTotalBalloonNumRightCounter].setBackground(getResources().getDrawable(getResources().getIdentifier("balloon_green", "drawable", getPackageName())));					
+						rightBalloon[currTotalBalloonNumRightCounter].setVisibility(ImageView.VISIBLE);					
+					}
+					else {
+						rightBalloon[currTotalBalloonNumRightCounter].setVisibility(ImageView.INVISIBLE);
+					}										
+				}
+			}
+    	});
+    	
+    	rightBalloonMinusButton = (Button)findViewById(R.id.right_balloon_minus_button);    	
+    	rightBalloonMinusButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (Math.abs(currTotalBalloonNumRight)<=MAX_BALLOON) {
+					currTotalBalloonNumRight--;
+					if (currTotalBalloonNumRight>=0) { //positive + 0
+						rightBalloonOffset=0;
+					}
+					else {
+						rightBalloonOffset=1;						
+					}
+					if (Math.abs(currTotalBalloonNumRight)>=MAX_BALLOON) {
+						currTotalBalloonNumRight=-(MAX_BALLOON);
+					}
+					currTotalBalloonNumRightCounter=Math.abs(currTotalBalloonNumRight)-rightBalloonOffset;						
+
+					if (currTotalBalloonNumRight>=0) { //if there are green balloones left						
+						rightBalloon[currTotalBalloonNumRightCounter].setVisibility(ImageView.INVISIBLE);					
+					}
+					else {
+						rightBalloon[currTotalBalloonNumRightCounter].setBackground(getResources().getDrawable(getResources().getIdentifier("balloon_red", "drawable", getPackageName())));					
+						rightBalloon[currTotalBalloonNumRightCounter].setVisibility(ImageView.VISIBLE);
+					}										
+				}
+			}
+    	});
 	}
 
 	@Override

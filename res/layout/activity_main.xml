@@ -204,6 +204,7 @@
 					android:background="@drawable/box_green"
 					android:layout_weight="10"
 					android:visibility="invisible"
+					android:id="@+id/right_box_1"
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
@@ -211,6 +212,7 @@
 					android:background="@drawable/box_green"
 					android:layout_weight="10"
 					android:visibility="invisible"
+					android:id="@+id/right_box_2"
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
@@ -218,6 +220,7 @@
 					android:background="@drawable/box_green"
 					android:layout_weight="10"
 					android:visibility="invisible"
+					android:id="@+id/right_box_3"
 			        />		   	   
 			    <ImageView 
 			        android:layout_width="wrap_content"
@@ -225,6 +228,7 @@
 					android:background="@drawable/box_green"
 					android:layout_weight="10"
 					android:visibility="invisible"
+					android:id="@+id/right_box_4"
 			        />		   	   		   	    
 		   </LinearLayout>
 		   <LinearLayout 
@@ -238,6 +242,7 @@
 					android:background="@drawable/box_green"
 					android:layout_weight="10"
 					android:visibility="invisible"
+					android:id="@+id/right_box_5"
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
@@ -245,6 +250,7 @@
 					android:background="@drawable/box_green"
 					android:layout_weight="10"
 					android:visibility="invisible"
+					android:id="@+id/right_box_6"
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
@@ -252,6 +258,7 @@
 					android:background="@drawable/box_green"
 					android:layout_weight="10"
 					android:visibility="invisible"
+					android:id="@+id/right_box_7"
 			        />		   	   
 			    <ImageView 
 			        android:layout_width="wrap_content"
@@ -259,6 +266,7 @@
 					android:background="@drawable/box_green"
 					android:layout_weight="10"
 					android:visibility="invisible"
+					android:id="@+id/right_box_8"
 			        />		   	   		   	    
 			</LinearLayout>
 		</LinearLayout>
@@ -382,6 +390,7 @@
 					android:background="@drawable/balloon_blue"
 					android:layout_weight="10"
 					android:visibility="invisible"
+					android:id="@+id/left_balloon_1"					
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
@@ -389,6 +398,7 @@
 					android:background="@drawable/balloon_blue"
 					android:layout_weight="10"
 					android:visibility="invisible"
+					android:id="@+id/left_balloon_2"					
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
@@ -396,6 +406,7 @@
 					android:background="@drawable/balloon_blue"
 					android:layout_weight="10"
 					android:visibility="invisible"
+					android:id="@+id/left_balloon_3"					
 			        />		   	   
 			    <ImageView 
 			        android:layout_width="wrap_content"
@@ -403,6 +414,7 @@
 					android:background="@drawable/balloon_blue"
 					android:layout_weight="10"
 					android:visibility="invisible"
+					android:id="@+id/left_balloon_4"					
 			        />		   	   		   	    
 	   		</LinearLayout>	    
 			<LinearLayout 
@@ -416,6 +428,7 @@
 					android:background="@drawable/balloon_blue"
 					android:layout_weight="10"
 					android:visibility="invisible"
+					android:id="@+id/left_balloon_5"					
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
@@ -423,6 +436,7 @@
 					android:background="@drawable/balloon_blue"
 					android:layout_weight="10"
 					android:visibility="invisible"
+					android:id="@+id/left_balloon_6"					
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
@@ -430,6 +444,7 @@
 					android:background="@drawable/balloon_blue"
 					android:layout_weight="10"
 					android:visibility="invisible"
+					android:id="@+id/left_balloon_7"					
 			        />		   	   
 			    <ImageView 
 			        android:layout_width="wrap_content"
@@ -437,6 +452,7 @@
 					android:background="@drawable/balloon_blue"
 					android:layout_weight="10"
 					android:visibility="invisible"
+					android:id="@+id/left_balloon_8"					
 		        	/>		   	   		   	    
 			</LinearLayout>
 		</LinearLayout>	
@@ -458,6 +474,7 @@
 					android:background="@drawable/balloon_blue"
 					android:layout_weight="10"
 					android:visibility="invisible"
+					android:id="@+id/right_balloon_1"					
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
@@ -465,6 +482,7 @@
 					android:background="@drawable/balloon_blue"
 					android:layout_weight="10"
 					android:visibility="invisible"
+					android:id="@+id/right_balloon_2"					
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
@@ -472,6 +490,7 @@
 					android:background="@drawable/balloon_blue"
 					android:layout_weight="10"
 					android:visibility="invisible"
+					android:id="@+id/right_balloon_3"					
 			        />		   	   
 			    <ImageView 
 			        android:layout_width="wrap_content"
@@ -479,6 +498,7 @@
 					android:background="@drawable/balloon_blue"
 					android:layout_weight="10"
 					android:visibility="invisible"
+					android:id="@+id/right_balloon_4"					
 			        />		   	   		   	    
 		   </LinearLayout>
 		   <LinearLayout 
@@ -492,6 +512,7 @@
 					android:background="@drawable/balloon_blue"
 					android:layout_weight="10"
 					android:visibility="invisible"
+					android:id="@+id/right_balloon_5"					
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
@@ -499,6 +520,7 @@
 					android:background="@drawable/balloon_blue"
 					android:layout_weight="10"
 					android:visibility="invisible"
+					android:id="@+id/right_balloon_6"					
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
@@ -506,6 +528,7 @@
 					android:background="@drawable/balloon_blue"
 					android:layout_weight="10"
 					android:visibility="invisible"
+					android:id="@+id/right_balloon_7"					
 			        />		   	   
 			    <ImageView 
 			        android:layout_width="wrap_content"
@@ -513,6 +536,7 @@
 					android:background="@drawable/balloon_blue"
 					android:layout_weight="10"
 					android:visibility="invisible"
+					android:id="@+id/right_balloon_8"					
 			        />		   	   		   	    
 			</LinearLayout>
 		</LinearLayout>
