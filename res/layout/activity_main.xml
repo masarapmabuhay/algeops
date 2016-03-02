@@ -79,10 +79,10 @@
 		        android:padding="6dp"	    		            
 		        android:textSize="16sp"
 		        android:layout_below="@+id/left_box"
-		        android:id="@+id/left_box_plus_button"
 		        android:layout_marginLeft="4dp"	   
 		        android:layout_marginTop="4dp"	   		        
 		        android:layout_alignParentLeft="true"     		        	        
+		        android:id="@+id/left_box_plus_button"
 		        />
 		    <Button 
 				android:layout_width="wrap_content"	        
@@ -99,6 +99,7 @@
 		        android:layout_marginLeft="4dp"	        		        	        		        
 		        android:layout_marginTop="4dp"	        
 		        android:layout_marginRight="4dp"	        
+		        android:id="@+id/left_box_minus_button"
 		        />
 		</RelativeLayout>        
 		<LinearLayout 
@@ -116,26 +117,34 @@
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-					android:background="@drawable/box_blue"
+					android:background="@drawable/box_green"
 					android:layout_weight="10"
+					android:visibility="invisible"
+					android:id="@+id/left_box_1"
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-					android:background="@drawable/box_blue"
+					android:background="@drawable/box_green"
 					android:layout_weight="10"
+					android:visibility="invisible"
+					android:id="@+id/left_box_2"
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-					android:background="@drawable/box_blue"
+					android:background="@drawable/box_green"
 					android:layout_weight="10"
+					android:visibility="invisible"
+					android:id="@+id/left_box_3"
 			        />		   	   
 			    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-					android:background="@drawable/box_blue"
+					android:background="@drawable/box_green"
 					android:layout_weight="10"
+					android:visibility="invisible"
+					android:id="@+id/left_box_4"
 			        />		   	   		   	    
 	   		</LinearLayout>	    
 			<LinearLayout 
@@ -143,30 +152,38 @@
 			   android:layout_height="wrap_content"
 			   android:orientation="horizontal"
 			   android:paddingTop="10dp">        
-			   	    <ImageView 
-				        android:layout_width="wrap_content"
-				        android:layout_height="wrap_content"
-						android:background="@drawable/box_blue"
-						android:layout_weight="10"
-				        />
-			   	    <ImageView 
-				        android:layout_width="wrap_content"
-				        android:layout_height="wrap_content"
-						android:background="@drawable/box_blue"
-						android:layout_weight="10"
-				        />
-			   	    <ImageView 
-				        android:layout_width="wrap_content"
-				        android:layout_height="wrap_content"
-						android:background="@drawable/box_blue"
-						android:layout_weight="10"
-				        />		   	   
-				    <ImageView 
+		   	    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-					android:background="@drawable/box_blue"
+					android:background="@drawable/box_green"
 					android:layout_weight="10"
-			        />		   	   		   	    
+					android:visibility="invisible"
+					android:id="@+id/left_box_5"
+			        />
+		   	    <ImageView 
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+					android:background="@drawable/box_green"
+					android:layout_weight="10"
+					android:visibility="invisible"
+					android:id="@+id/left_box_6"
+			        />
+		   	    <ImageView 
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+					android:background="@drawable/box_green"
+					android:layout_weight="10"
+					android:visibility="invisible"
+					android:id="@+id/left_box_7"
+			        />		   	   
+			    <ImageView 
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+					android:background="@drawable/box_green"
+					android:layout_weight="10"
+					android:visibility="invisible"
+					android:id="@+id/left_box_8"
+		        />		   	   		   	    
 			</LinearLayout>
 		</LinearLayout>	
 		<LinearLayout 
@@ -184,26 +201,30 @@
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-					android:background="@drawable/box_blue"
+					android:background="@drawable/box_green"
 					android:layout_weight="10"
+					android:visibility="invisible"
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-					android:background="@drawable/box_blue"
+					android:background="@drawable/box_green"
 					android:layout_weight="10"
+					android:visibility="invisible"
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-					android:background="@drawable/box_blue"
+					android:background="@drawable/box_green"
 					android:layout_weight="10"
+					android:visibility="invisible"
 			        />		   	   
 			    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-					android:background="@drawable/box_blue"
+					android:background="@drawable/box_green"
 					android:layout_weight="10"
+					android:visibility="invisible"
 			        />		   	   		   	    
 		   </LinearLayout>
 		   <LinearLayout 
@@ -214,26 +235,30 @@
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-					android:background="@drawable/box_blue"
+					android:background="@drawable/box_green"
 					android:layout_weight="10"
+					android:visibility="invisible"
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-					android:background="@drawable/box_blue"
+					android:background="@drawable/box_green"
 					android:layout_weight="10"
+					android:visibility="invisible"
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-					android:background="@drawable/box_blue"
+					android:background="@drawable/box_green"
 					android:layout_weight="10"
+					android:visibility="invisible"
 			        />		   	   
 			    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
-					android:background="@drawable/box_blue"
+					android:background="@drawable/box_green"
 					android:layout_weight="10"
+					android:visibility="invisible"
 			        />		   	   		   	    
 			</LinearLayout>
 		</LinearLayout>
@@ -316,10 +341,10 @@
 		        android:padding="6dp"	    		            
 		        android:textSize="16sp"
 		        android:layout_below="@+id/left_balloon"
-		        android:id="@+id/left_balloon_plus_button"
 		        android:layout_marginLeft="4dp"	   
 		        android:layout_marginTop="4dp"	   		        
 		        android:layout_alignParentLeft="true"     		        	        
+		        android:id="@+id/left_balloon_plus_button"
 		        />
 		    <Button 
 				android:layout_width="wrap_content"	        
@@ -336,6 +361,7 @@
 		        android:layout_marginLeft="4dp"	        		        	        		        
 		        android:layout_marginTop="4dp"	        
 		        android:layout_marginRight="4dp"	        
+		        android:id="@+id/left_balloon_minus_button"
 		        />
 		</RelativeLayout>        
 		<LinearLayout 
@@ -355,24 +381,28 @@
 			        android:layout_height="wrap_content"
 					android:background="@drawable/balloon_blue"
 					android:layout_weight="10"
+					android:visibility="invisible"
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
 					android:background="@drawable/balloon_blue"
 					android:layout_weight="10"
+					android:visibility="invisible"
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
 					android:background="@drawable/balloon_blue"
 					android:layout_weight="10"
+					android:visibility="invisible"
 			        />		   	   
 			    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
 					android:background="@drawable/balloon_blue"
 					android:layout_weight="10"
+					android:visibility="invisible"
 			        />		   	   		   	    
 	   		</LinearLayout>	    
 			<LinearLayout 
@@ -380,30 +410,34 @@
 			   android:layout_height="wrap_content"
 			   android:orientation="horizontal"
 			   android:paddingTop="10dp">        
-			   	    <ImageView 
-				        android:layout_width="wrap_content"
-				        android:layout_height="wrap_content"
-						android:background="@drawable/balloon_blue"
-						android:layout_weight="10"
-				        />
-			   	    <ImageView 
-				        android:layout_width="wrap_content"
-				        android:layout_height="wrap_content"
-						android:background="@drawable/balloon_blue"
-						android:layout_weight="10"
-				        />
-			   	    <ImageView 
-				        android:layout_width="wrap_content"
-				        android:layout_height="wrap_content"
-						android:background="@drawable/balloon_blue"
-						android:layout_weight="10"
-				        />		   	   
-				    <ImageView 
+		   	    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
 					android:background="@drawable/balloon_blue"
 					android:layout_weight="10"
-			        />		   	   		   	    
+					android:visibility="invisible"
+			        />
+		   	    <ImageView 
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+					android:background="@drawable/balloon_blue"
+					android:layout_weight="10"
+					android:visibility="invisible"
+			        />
+		   	    <ImageView 
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+					android:background="@drawable/balloon_blue"
+					android:layout_weight="10"
+					android:visibility="invisible"
+			        />		   	   
+			    <ImageView 
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+					android:background="@drawable/balloon_blue"
+					android:layout_weight="10"
+					android:visibility="invisible"
+		        	/>		   	   		   	    
 			</LinearLayout>
 		</LinearLayout>	
 		<LinearLayout 
@@ -423,24 +457,28 @@
 			        android:layout_height="wrap_content"
 					android:background="@drawable/balloon_blue"
 					android:layout_weight="10"
+					android:visibility="invisible"
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
 					android:background="@drawable/balloon_blue"
 					android:layout_weight="10"
+					android:visibility="invisible"
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
 					android:background="@drawable/balloon_blue"
 					android:layout_weight="10"
+					android:visibility="invisible"
 			        />		   	   
 			    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
 					android:background="@drawable/balloon_blue"
 					android:layout_weight="10"
+					android:visibility="invisible"
 			        />		   	   		   	    
 		   </LinearLayout>
 		   <LinearLayout 
@@ -453,24 +491,28 @@
 			        android:layout_height="wrap_content"
 					android:background="@drawable/balloon_blue"
 					android:layout_weight="10"
+					android:visibility="invisible"
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
 					android:background="@drawable/balloon_blue"
 					android:layout_weight="10"
+					android:visibility="invisible"
 			        />
 		   	    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
 					android:background="@drawable/balloon_blue"
 					android:layout_weight="10"
+					android:visibility="invisible"
 			        />		   	   
 			    <ImageView 
 			        android:layout_width="wrap_content"
 			        android:layout_height="wrap_content"
 					android:background="@drawable/balloon_blue"
 					android:layout_weight="10"
+					android:visibility="invisible"
 			        />		   	   		   	    
 			</LinearLayout>
 		</LinearLayout>
@@ -498,10 +540,10 @@
 		        android:padding="6dp"	    		            
 		        android:textSize="16sp"
 		        android:layout_below="@+id/right_balloon"
-		        android:id="@+id/right_balloon_minus_button"
 		        android:layout_marginRight="4dp"	        		        
 		        android:layout_marginTop="4dp"	   
 		        android:layout_toRightOf="@+id/right_balloon_plus_button"
+		        android:id="@+id/right_balloon_minus_button"
 		        />	    
 			<Button 
 			    android:id="@+id/right_balloon_plus_button"
