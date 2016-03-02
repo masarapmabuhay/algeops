@@ -22,7 +22,8 @@
 	        android:maxWidth="16dp"
 	        android:padding="10dp"
 	        android:background="@drawable/rect_border" 
-	        android:layout_weight="40"/>
+	        android:layout_weight="40"
+	        android:id="@+id/left_equation"/>
 	    <TextView
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -34,7 +35,7 @@
 	        android:background="@drawable/circle_border" 
 	        android:layout_marginLeft="6dp"
 	        android:layout_marginRight="6dp"	        
-	        android:layout_weight="20"/>
+	        android:layout_weight="20"/>	        
 	   	<TextView
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
@@ -44,7 +45,8 @@
 	        android:maxWidth="16dp"
 	        android:padding="10dp"
 	        android:background="@drawable/rect_border" 
-	        android:layout_weight="40"/>
+	        android:layout_weight="40"	        
+	        android:id="@+id/right_equation"/>
 	</LinearLayout>
     <LinearLayout 
         android:id="@+id/top_row_2"
@@ -586,6 +588,20 @@
 		        android:layout_marginRight="4dp"
 		        android:layout_marginLeft="4dp"		        	        
 		        />		   		   			        
-		</RelativeLayout>        		
-    </LinearLayout>    
+		</RelativeLayout>        
+    </LinearLayout>        
+    <LinearLayout
+		style="@style/UsbongDefaultBackNextButtonLayout"
+		android:layout_alignParentBottom="true"
+		android:layout_marginBottom="4dp">	
+	    <Button android:id="@+id/check_button"
+		    style="@style/UsbongDefaultBackNextButton"
+		    android:textColor="#f6ecde"
+		    android:text="Check"/>
+		    
+	   	<Button android:id="@+id/new_button"
+		    style="@style/UsbongDefaultBackNextButton"
+		    android:textColor="#f6ecde"
+		    android:text="New"/>	    
+	</LinearLayout>    	   			    
 </RelativeLayout>

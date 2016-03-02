@@ -1,18 +1,28 @@
 package usbong.android.algeops;
 
+import java.util.Random;
+
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainActivity extends ActionBarActivity {
 	private final int MAX_BOX = 8;
 	private final int MAX_BALLOON = 8;
+
+	private int var_a;
+	private int var_b;
+	private int var_c;
+	private int var_d;
+	
+	private TextView leftEquationTextView;
+	private TextView rightEquationTextView;
 	
 	private int currTotalBoxNumLeft=0;
 	private int currTotalBalloonNumLeft=0;	
@@ -43,6 +53,9 @@ public class MainActivity extends ActionBarActivity {
 	private Button leftBalloonMinusButton;
 	private Button rightBalloonPlusButton;
 	private Button rightBalloonMinusButton;
+
+	private Button checkButton;
+	private Button newButton;	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -53,11 +66,13 @@ public class MainActivity extends ActionBarActivity {
 	}
 	
 	public void init() {
+		updateEquations();
+		
 		leftBox = new ImageView[MAX_BOX];
 		rightBox = new ImageView[MAX_BOX];
 		leftBalloon = new ImageView[MAX_BALLOON];
 		rightBalloon = new ImageView[MAX_BALLOON];
-
+		
 		int tempI;
 		int resId;
 		for (int i=0; i<MAX_BOX; i++) {
@@ -310,8 +325,69 @@ public class MainActivity extends ActionBarActivity {
 				}
 			}
     	});
+    	
+    	newButton = (Button)findViewById(R.id.new_button);    	
+    	newButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+		    	updateEquations();
+			}
+    	});
 	}
+	
+	//References:
+	//[1] http://stackoverflow.com/questions/6029495/how-can-i-generate-random-number-in-specific-range-in-android;
+	//last accessed: 20160302; answer by: Ishtar (20110517), edited by Mr. Polywhirl (20140214)
+	//[2] http://stackoverflow.com/questions/3938992/how-to-generate-random-positive-and-negative-numbers-in-java;
+	//last accessed: 20160302; answer by: Pinichi (20101015)
+	public void generateEquation() {
+		Random r = new Random();
+		var_a = r.nextInt(7+6) - 6; //randomizes from -6 to 6
+		var_d = r.nextInt(7+6) - 6; //randomizes from -6 to 6
 
+		//--------------------------------------------
+		//var_b
+		//--------------------------------------------
+		if ((var_d==-5) || (var_d==-6)) {
+			int temp = -10-var_d;
+			var_b = r.nextInt(7+temp) - temp; //randomizes from -10-d to 6			
+		}
+		else if ((var_d==5) || (var_d==6)) {
+			int temp = 10-var_d +1;
+			var_b = r.nextInt(temp+6) - 6; //randomizes from -6 to 10-d
+		}
+		else { //-4 to 4
+			var_b = r.nextInt(7+6) - 6; //randomizes from -6 to 6						
+		}
+		
+		//--------------------------------------------
+		//var_c
+		//--------------------------------------------
+		if ((var_a==-5) || (var_a==-6)) {
+			int temp = -10-var_a;
+			var_c = r.nextInt(7+temp) - temp; //randomizes from -10-d to 6			
+		}
+		else if ((var_a==5) || (var_a==6)) {
+			int temp = 10-var_a +1;
+			var_c = r.nextInt(temp+6) - 6; //randomizes from -6 to 10-d
+		}
+		else { //-4 to 4
+			var_c = r.nextInt(7+6) - 6; //randomizes from -6 to 6						
+		}	
+		
+//		Log.d(">>>var_a",""+var_a);
+	}
+	
+	public void updateEquations() {
+		generateEquation();		
+		leftEquationTextView = (TextView)findViewById(R.id.left_equation);    			
+		leftEquationTextView.setText(var_a+"x"+"+"+var_b);
+		
+		generateEquation();		
+		rightEquationTextView = (TextView)findViewById(R.id.right_equation);    			
+		rightEquationTextView.setText(var_c+"x"+"+"+var_d);		
+	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
