@@ -1,0 +1,23 @@
+--AlgeOps--
+ver: 1.0.0
+date: 20160302
+
+AdMU Math Department
+--Core Developer--
+Winfer Tabares
+
+Usbong Social Systems, Inc.
+--Core Developer--
+Michael B. Syson
+
+--Acknowledgment--
+Ateneo de Manila University (AdMU)
+Ateneo Innovation Center (AIC)
+Department of Science and Technology (DOST)
+
+Contact:
+Website: www.usbong.ph
+Mailing List: usbong-users@googlegroups.com
+Email: support@usbong.ph
+
+Copyright 2016. All rights reserved.

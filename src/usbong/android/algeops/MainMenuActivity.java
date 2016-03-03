@@ -14,6 +14,9 @@
  */
 package usbong.android.algeops;
 
+import usbong.android.utils.UsbongUtils;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -71,9 +74,20 @@ public class MainMenuActivity extends ActionBarActivity
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
-		if (id == R.id.action_settings) {
+
+		/*if (id == R.id.action_settings) {
 			return true;
 		}
+		else */if (id == R.id.about) {
+	    	new AlertDialog.Builder(MainMenuActivity.this).setTitle("About")
+			.setMessage(UsbongUtils.readTextFileInAssetsFolder(MainMenuActivity.this,"about.txt")) //don't add a '/', otherwise the file would not be found
+			.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+				}
+			}).show();
+			return true;
+		}		
 		return super.onOptionsItemSelected(item);
 	}
 }

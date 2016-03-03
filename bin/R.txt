@@ -416,6 +416,7 @@ int drawable button_pressed 0x7f020044
 int drawable circle_border 0x7f020045
 int drawable ic_launcher 0x7f020046
 int drawable rect_border 0x7f020047
+int id about 0x7f050087
 int id action_bar 0x7f050040
 int id action_bar_activity_content 0x7f05001d
 int id action_bar_container 0x7f05003f
@@ -429,7 +430,6 @@ int id action_menu_presenter 0x7f050020
 int id action_mode_bar 0x7f05003d
 int id action_mode_bar_stub 0x7f05003c
 int id action_mode_close_button 0x7f050025
-int id action_settings 0x7f050087
 int id activity_chooser_view_content 0x7f050026
 int id add_button 0x7f050085
 int id alertTitle 0x7f050030
@@ -604,6 +604,7 @@ int string abc_searchview_description_voice 0x7f0a000c
 int string abc_shareactionprovider_share_with 0x7f0a0010
 int string abc_shareactionprovider_share_with_application 0x7f0a000f
 int string abc_toolbar_collapse_description 0x7f0a0004
+int string about 0x7f0a0014
 int string action_settings 0x7f0a0013
 int string app_name 0x7f0a0011
 int string hello_world 0x7f0a0012

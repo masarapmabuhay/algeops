@@ -2,6 +2,10 @@ package usbong.android.algeops;
 
 import java.util.Random;
 
+import usbong.android.utils.UsbongUtils;
+
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -333,6 +337,14 @@ public class MainActivity extends ActionBarActivity {
 		    	updateEquations();
 			}
     	});
+
+    	checkButton = (Button)findViewById(R.id.check_button);    	
+    	checkButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+//		    	checkAnswer();
+			}
+    	});
 	}
 	
 	//References:
@@ -388,6 +400,23 @@ public class MainActivity extends ActionBarActivity {
 		rightEquationTextView.setText(var_c+"x"+"+"+var_d);		
 	}
 	
+	public void checkAnswer() {
+		String leftEquation;
+		String rightEquation;
+		
+		leftEquationTextView = (TextView)findViewById(R.id.left_equation);
+		leftEquation = leftEquationTextView.getText().toString();
+		
+		rightEquationTextView = (TextView)findViewById(R.id.right_equation);    			
+		rightEquation = rightEquationTextView.getText().toString();
+/*
+		private int currTotalBoxNumLeft=0;
+		private int currTotalBalloonNumLeft=0;	
+		private int currTotalBoxNumRight=0;
+		private int currTotalBalloonNumRight=0;	
+*/
+	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -401,9 +430,20 @@ public class MainActivity extends ActionBarActivity {
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
-		if (id == R.id.action_settings) {
+
+		/*if (id == R.id.action_settings) {
 			return true;
 		}
+		else */if (id == R.id.about) {
+	    	new AlertDialog.Builder(MainActivity.this).setTitle("About")
+			.setMessage(UsbongUtils.readTextFileInAssetsFolder(MainActivity.this,"about.txt")) //don't add a '/', otherwise the file would not be found
+			.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+				}
+			}).show();
+			return true;
+		}		
 		return super.onOptionsItemSelected(item);
 	}
 }
