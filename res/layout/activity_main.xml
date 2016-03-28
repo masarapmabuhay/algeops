@@ -591,20 +591,21 @@
 		</RelativeLayout>        
     </LinearLayout>     
     <LinearLayout
-		style="@style/UsbongDefaultBackNextButtonLayout"
-		android:layout_alignParentBottom="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+		android:layout_above="@+id/bottom_buttons"
 		android:layout_marginBottom="4dp">	
-    
-    <SeekBar
-            android:id="@+id/PRICEseekBarID"
+        <com.edmodo.rangebar.RangeBar
+            xmlns:custom="http://schemas.android.com/lib/com.edmodo.rangebar.RangeBar"
+            android:id="@+id/rangebar1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_below="@+id/textView1"
-            android:layout_marginTop="26dp"            
-            android:max="100" >
-        </SeekBar>   
+            android:layout_marginBottom="50dp"
+            android:layout_marginTop="50dp"
+            custom:tickCount="20" />    
+    </LinearLayout>
     <LinearLayout
+		android:id="@+id/bottom_buttons"        
 		style="@style/UsbongDefaultBackNextButtonLayout"
 		android:layout_alignParentBottom="true"
 		android:layout_marginBottom="4dp">	
