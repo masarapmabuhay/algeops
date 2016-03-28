@@ -393,11 +393,24 @@ public class MainActivity extends ActionBarActivity {
 	public void updateEquations() {
 		generateEquation();		
 		leftEquationTextView = (TextView)findViewById(R.id.left_equation);    			
-		leftEquationTextView.setText(var_a+"x"+"+"+var_b);
+		
+		//added by Mike, 20160328
+		if (var_b < 0) { //if negative number
+			leftEquationTextView.setText(var_a+"x"+var_b);			
+		}
+		else {
+			leftEquationTextView.setText(var_a+"x"+"+"+var_b);			
+		}
 		
 		generateEquation();		
 		rightEquationTextView = (TextView)findViewById(R.id.right_equation);    			
-		rightEquationTextView.setText(var_c+"x"+"+"+var_d);		
+		//added by Mike, 20160328
+		if (var_d < 0) { //if negative number
+			rightEquationTextView.setText(var_c+"x"+var_d);		
+		}
+		else {
+			rightEquationTextView.setText(var_c+"x"+"+"+var_d);					
+		}
 	}
 	
 	public void checkAnswer() {

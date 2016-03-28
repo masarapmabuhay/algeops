@@ -1,6 +1,6 @@
 --AlgeOps--
-ver: 1.0.0
-date: 20160302
+ver: 1.1.0
+date: 20160328
 
 AdMU Math Department
 --Core Developer--
