@@ -591,18 +591,46 @@
 		</RelativeLayout>        
     </LinearLayout>     
     <LinearLayout
+        android:id="@+id/linearlayout_box_range_bar_set"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-		android:layout_above="@+id/bottom_buttons"
+        android:orientation="vertical"
+		android:layout_above="@+id/linearlayout_balloon_range_bar_set"
 		android:layout_marginBottom="4dp">	
         <com.edmodo.rangebar.RangeBar
-            xmlns:custom="http://schemas.android.com/lib/com.edmodo.rangebar.RangeBar"
+            xmlns:custom="http://schemas.android.com/apk/res-auto"
             android:id="@+id/rangebar1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
-            android:layout_marginTop="50dp"
-            custom:tickCount="20" />    
+            android:layout_marginTop="4dp"
+            custom:tickCount="21" />    
+		<ImageView 
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+				android:background="@drawable/box_blue"
+            	android:layout_marginLeft="4dp"
+				android:id="@+id/range_bar_box" />	        
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearlayout_balloon_range_bar_set"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+		android:layout_above="@+id/bottom_buttons"
+		android:layout_marginBottom="4dp">	
+        <com.edmodo.rangebar.RangeBar
+            xmlns:custom="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/rangebar2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            custom:tickCount="21" />    
+		<ImageView 
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+				android:background="@drawable/balloon_blue"
+            	android:layout_marginLeft="4dp"
+				android:id="@+id/range_bar_balloon" />	        
     </LinearLayout>
     <LinearLayout
 		android:id="@+id/bottom_buttons"        

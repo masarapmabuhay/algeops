@@ -54,7 +54,7 @@ public class MainMenuActivity extends ActionBarActivity
 //				finish();
 				startActivity(addIntent);
 			}
-    	});
+    	});    	
     }
     
     public void initGUI()

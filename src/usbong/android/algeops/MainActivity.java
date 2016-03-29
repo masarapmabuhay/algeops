@@ -3,18 +3,21 @@ package usbong.android.algeops;
 import java.util.Random;
 
 import usbong.android.utils.UsbongUtils;
-
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.edmodo.rangebar.RangeBar;
 
 public class MainActivity extends ActionBarActivity {
 	private final int MAX_BOX = 8;
@@ -60,6 +63,9 @@ public class MainActivity extends ActionBarActivity {
 
 	private Button checkButton;
 	private Button newButton;	
+
+	private LinearLayout myLinearLayoutRangeBarSet1;
+	private RangeBar myRangeBar1;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -329,6 +335,19 @@ public class MainActivity extends ActionBarActivity {
 				}
 			}
     	});
+
+		//-----------------------------------------------------------------------
+		//Range Bar Set 1
+		//-----------------------------------------------------------------------		    	
+    	myLinearLayoutRangeBarSet1 = (LinearLayout) findViewById(R.id.linearlayout_box_range_bar_set);
+    	myRangeBar1 = (RangeBar) findViewById(R.id.rangebar1);
+    	int totalBarWidth = myLinearLayoutRangeBarSet1.getWidth();
+    	for (int i=0; i<totalBarWidth; i+=2) { //why 2? the gap between points is 2    		
+    		Log.d(">>>>barWidth", ""+i);
+    		TextView tv = new TextView(this);
+    		tv.setText("1");
+    		myLinearLayoutRangeBarSet1.addView(tv);    		
+    	}    	
     	
     	newButton = (Button)findViewById(R.id.new_button);    	
     	newButton.setOnClickListener(new OnClickListener() {
