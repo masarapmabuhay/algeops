@@ -23,10 +23,10 @@ public class MainActivity extends ActionBarActivity {
 	private final int MAX_BOX = 8;
 	private final int MAX_BALLOON = 8;
 
-	private int var_a;
-	private int var_b;
-	private int var_c;
-	private int var_d;
+	private static int var_a;
+	private static int var_b;
+	private static int var_c;
+	private static int var_d;
 	
 	private TextView leftEquationTextView;
 	private TextView rightEquationTextView;
@@ -66,6 +66,8 @@ public class MainActivity extends ActionBarActivity {
 
 	private LinearLayout myLinearLayoutRangeBarSet1;
 	private RangeBar myRangeBar1;
+	
+	private boolean isPrelimCheckSuccess;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -107,6 +109,10 @@ public class MainActivity extends ActionBarActivity {
     	leftBoxPlusButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				if (isPrelimCheckSuccess) {
+	    			return;
+	    		}
+
 				if (Math.abs(currTotalBoxNumLeft)<=MAX_BOX) {
 					currTotalBoxNumLeft++;
 					if (currTotalBoxNumLeft>0) { //positive
@@ -128,6 +134,7 @@ public class MainActivity extends ActionBarActivity {
 						leftBox[currTotalBoxNumLeftCounter].setVisibility(ImageView.INVISIBLE);
 					}										
 				}
+				processPrelimCheck();
 			}
     	});
     	
@@ -135,6 +142,10 @@ public class MainActivity extends ActionBarActivity {
     	leftBoxMinusButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				if (isPrelimCheckSuccess) {
+	    			return;
+	    		}
+
 				if (Math.abs(currTotalBoxNumLeft)<=MAX_BOX) {
 					currTotalBoxNumLeft--;
 					if (currTotalBoxNumLeft>=0) { //positive + 0
@@ -156,6 +167,7 @@ public class MainActivity extends ActionBarActivity {
 						leftBox[currTotalBoxNumLeftCounter].setVisibility(ImageView.VISIBLE);
 					}										
 				}
+				processPrelimCheck();
 			}
     	});
 
@@ -166,6 +178,10 @@ public class MainActivity extends ActionBarActivity {
     	rightBoxPlusButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				if (isPrelimCheckSuccess) {
+	    			return;
+	    		}
+
 				if (Math.abs(currTotalBoxNumRight)<=MAX_BOX) {
 					currTotalBoxNumRight++;
 					if (currTotalBoxNumRight>0) { //positive
@@ -187,6 +203,7 @@ public class MainActivity extends ActionBarActivity {
 						rightBox[currTotalBoxNumRightCounter].setVisibility(ImageView.INVISIBLE);
 					}										
 				}
+				processPrelimCheck();
 			}
     	});
     	
@@ -194,6 +211,10 @@ public class MainActivity extends ActionBarActivity {
     	rightBoxMinusButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				if (isPrelimCheckSuccess) {
+	    			return;
+	    		}
+
 				if (Math.abs(currTotalBoxNumRight)<=MAX_BOX) {
 					currTotalBoxNumRight--;
 					if (currTotalBoxNumRight>=0) { //positive + 0
@@ -215,6 +236,7 @@ public class MainActivity extends ActionBarActivity {
 						rightBox[currTotalBoxNumRightCounter].setVisibility(ImageView.VISIBLE);
 					}										
 				}
+				processPrelimCheck();
 			}
     	});
 
@@ -225,6 +247,10 @@ public class MainActivity extends ActionBarActivity {
     	leftBalloonPlusButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				if (isPrelimCheckSuccess) {
+	    			return;
+	    		}
+
 				if (Math.abs(currTotalBalloonNumLeft)<=MAX_BALLOON) {
 					currTotalBalloonNumLeft++;
 					if (currTotalBalloonNumLeft>0) { //positive
@@ -246,6 +272,7 @@ public class MainActivity extends ActionBarActivity {
 						leftBalloon[currTotalBalloonNumLeftCounter].setVisibility(ImageView.INVISIBLE);
 					}										
 				}
+				processPrelimCheck();
 			}
     	});
     	
@@ -253,6 +280,10 @@ public class MainActivity extends ActionBarActivity {
     	leftBalloonMinusButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				if (isPrelimCheckSuccess) {
+	    			return;
+	    		}
+
 				if (Math.abs(currTotalBalloonNumLeft)<=MAX_BALLOON) {
 					currTotalBalloonNumLeft--;
 					if (currTotalBalloonNumLeft>=0) { //positive + 0
@@ -274,6 +305,7 @@ public class MainActivity extends ActionBarActivity {
 						leftBalloon[currTotalBalloonNumLeftCounter].setVisibility(ImageView.VISIBLE);
 					}										
 				}
+				processPrelimCheck();
 			}
     	});
 
@@ -284,6 +316,10 @@ public class MainActivity extends ActionBarActivity {
     	rightBalloonPlusButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				if (isPrelimCheckSuccess) {
+	    			return;
+	    		}
+
 				if (Math.abs(currTotalBalloonNumRight)<=MAX_BALLOON) {
 					currTotalBalloonNumRight++;
 					if (currTotalBalloonNumRight>0) { //positive
@@ -305,6 +341,7 @@ public class MainActivity extends ActionBarActivity {
 						rightBalloon[currTotalBalloonNumRightCounter].setVisibility(ImageView.INVISIBLE);
 					}										
 				}
+				processPrelimCheck();
 			}
     	});
     	
@@ -312,6 +349,10 @@ public class MainActivity extends ActionBarActivity {
     	rightBalloonMinusButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				if (isPrelimCheckSuccess) {
+					return;
+    			}
+
 				if (Math.abs(currTotalBalloonNumRight)<=MAX_BALLOON) {
 					currTotalBalloonNumRight--;
 					if (currTotalBalloonNumRight>=0) { //positive + 0
@@ -333,6 +374,7 @@ public class MainActivity extends ActionBarActivity {
 						rightBalloon[currTotalBalloonNumRightCounter].setVisibility(ImageView.VISIBLE);
 					}										
 				}
+				processPrelimCheck();
 			}
     	});
 
@@ -353,7 +395,7 @@ public class MainActivity extends ActionBarActivity {
     	newButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-		    	updateEquations();
+		    	reset();
 			}
     	});
 
@@ -364,6 +406,36 @@ public class MainActivity extends ActionBarActivity {
 //		    	checkAnswer();
 			}
     	});
+	}
+	
+	public void reset() {
+		var_a=0;
+		var_b=0;
+		var_c=0;
+		var_d=0;
+
+		isPrelimCheckSuccess=false;
+		
+		updateEquations();		    	
+		resetBoxesAndBalloonsVisibility();
+		resetCounters();
+	}
+	
+	public void resetCounters() {
+		currTotalBoxNumLeft=0;
+		currTotalBalloonNumLeft=0;	
+		currTotalBoxNumRight=0;
+		currTotalBalloonNumRight=0;	
+		
+		currTotalBoxNumLeftCounter=0;
+		currTotalBoxNumRightCounter=0;
+		currTotalBalloonNumLeftCounter=0;
+		currTotalBalloonNumRightCounter=0;
+		
+		leftBoxOffset=0;
+		rightBoxOffset=0;
+		leftBalloonOffset=0;
+		rightBalloonOffset=0;
 	}
 	
 	//References:
@@ -421,7 +493,6 @@ public class MainActivity extends ActionBarActivity {
 			leftEquationTextView.setText(var_a+"x"+"+"+var_b);			
 		}
 		
-		generateEquation();		
 		rightEquationTextView = (TextView)findViewById(R.id.right_equation);    			
 		//added by Mike, 20160328
 		if (var_d < 0) { //if negative number
@@ -429,6 +500,125 @@ public class MainActivity extends ActionBarActivity {
 		}
 		else {
 			rightEquationTextView.setText(var_c+"x"+"+"+var_d);					
+		}
+	}
+	
+	//check if the boxes and balloons correctly reflect the 2 equations
+	//if yes, show the number line
+	//Note: (ax + b) and (cx + d)
+	public boolean processPrelimCheck() {
+		Log.d(">>>>","inside: processPrelimCheck(): currTotalBoxNumLeft; var_a: "+currTotalBoxNumLeft+"; "+var_a);
+		if (currTotalBoxNumLeft!=var_a) {
+			return false;
+		}
+		if (currTotalBalloonNumLeft!=var_b) {
+			return false;
+		}
+		if (currTotalBoxNumRight!=var_c) {
+			return false;
+		}
+		if (currTotalBalloonNumRight!=var_d) {
+			return false;
+		}
+		
+		isPrelimCheckSuccess=true;		
+		removeSuperfluousBoxesAndBalloons();
+
+		Log.d(">>>>","inside: processPrelimCheck(): return true");
+		return true;
+	}	
+
+	public void resetBoxesAndBalloonsVisibility() {
+		for (int i=0; i<MAX_BOX; i++) { 
+			leftBox[i].setVisibility(ImageView.INVISIBLE);					
+		}
+		for (int i=0; i<MAX_BALLOON; i++) { 
+			leftBalloon[i].setVisibility(ImageView.INVISIBLE);					
+		}
+		for (int i=0; i<MAX_BOX; i++) { 
+			rightBox[i].setVisibility(ImageView.INVISIBLE);					
+		}
+		for (int i=0; i<MAX_BALLOON; i++) { 
+			rightBalloon[i].setVisibility(ImageView.INVISIBLE);					
+		}
+	}
+
+	//Note: (ax + b) and (cx + d)
+	public void removeSuperfluousBoxesAndBalloons() {
+		int resultingNumOfBox = var_a + var_c;
+		int resultingNumOfBalloon = var_b + var_d;
+		
+		//determine which side, i.e. left or right, should the boxes/balloons be placed
+		boolean isGreaterNumOfBoxPutOnLeftSide=false;
+		boolean isGreaterNumOfBalloonPutOnLeftSide=false;
+		
+		if (var_a > var_c) {
+			isGreaterNumOfBoxPutOnLeftSide=true;
+		}
+		if (var_b > var_d) {
+			isGreaterNumOfBalloonPutOnLeftSide=true;
+		}
+		
+		resetBoxesAndBalloonsVisibility();
+
+		//part 1
+		if (isGreaterNumOfBoxPutOnLeftSide) {
+			if (resultingNumOfBox>0) { //if positive number
+				for (int i=0; i<Math.abs(resultingNumOfBox); i++) { 
+					leftBox[i].setBackground(getResources().getDrawable(getResources().getIdentifier("box_green", "drawable", getPackageName())));					
+					leftBox[i].setVisibility(ImageView.VISIBLE);					
+				}			
+			}
+			else { //if negative number
+				for (int i=0; i<Math.abs(resultingNumOfBox); i++) { 
+					leftBox[i].setBackground(getResources().getDrawable(getResources().getIdentifier("box_red", "drawable", getPackageName())));					
+					leftBox[i].setVisibility(ImageView.VISIBLE);					
+				}			
+			}			
+		}
+		else {
+			if (resultingNumOfBox>0) { //if positive number
+				for (int i=0; i<Math.abs(resultingNumOfBox); i++) { 
+					rightBox[i].setBackground(getResources().getDrawable(getResources().getIdentifier("box_green", "drawable", getPackageName())));					
+					rightBox[i].setVisibility(ImageView.VISIBLE);					
+				}			
+			}
+			else { //if negative number
+				for (int i=0; i<Math.abs(resultingNumOfBox); i++) { 
+					rightBox[i].setBackground(getResources().getDrawable(getResources().getIdentifier("box_red", "drawable", getPackageName())));					
+					rightBox[i].setVisibility(ImageView.VISIBLE);					
+				}			
+			}						
+		}
+		
+		//part 2
+		if (isGreaterNumOfBalloonPutOnLeftSide) {
+			if (resultingNumOfBalloon>0) { //if positive number
+				for (int i=0; i<Math.abs(resultingNumOfBalloon); i++) { 
+					leftBalloon[i].setBackground(getResources().getDrawable(getResources().getIdentifier("balloon_green", "drawable", getPackageName())));					
+					leftBalloon[i].setVisibility(ImageView.VISIBLE);					
+				}			
+			}
+			else { //if negative number
+				for (int i=0; i<Math.abs(resultingNumOfBalloon); i++) { 
+					leftBalloon[i].setBackground(getResources().getDrawable(getResources().getIdentifier("balloon_red", "drawable", getPackageName())));					
+					leftBalloon[i].setVisibility(ImageView.VISIBLE);					
+				}			
+			}			
+		}
+		else {
+			if (resultingNumOfBalloon>0) { //if positive number
+				for (int i=0; i<Math.abs(resultingNumOfBalloon); i++) { 
+					rightBalloon[i].setBackground(getResources().getDrawable(getResources().getIdentifier("balloon_green", "drawable", getPackageName())));					
+					rightBalloon[i].setVisibility(ImageView.VISIBLE);					
+				}			
+			}
+			else { //if negative number
+				for (int i=0; i<Math.abs(resultingNumOfBalloon); i++) { 
+					rightBalloon[i].setBackground(getResources().getDrawable(getResources().getIdentifier("balloon_red", "drawable", getPackageName())));					
+					rightBalloon[i].setVisibility(ImageView.VISIBLE);					
+				}			
+			}						
 		}
 	}
 	
