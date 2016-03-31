@@ -5,9 +5,9 @@ import java.util.Random;
 import usbong.android.utils.UsbongUtils;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,7 +22,8 @@ import com.edmodo.rangebar.RangeBar;
 public class MainActivity extends ActionBarActivity {
 	private final int MAX_BOX = 8;
 	private final int MAX_BALLOON = 8;
-
+	private final int TOTAL_TICKS = 21; //21 is the total number of points in the line
+	
 	private static int var_a;
 	private static int var_b;
 	private static int var_c;
@@ -64,8 +65,12 @@ public class MainActivity extends ActionBarActivity {
 	private Button checkButton;
 	private Button newButton;	
 
-	private LinearLayout myLinearLayoutRangeBarSet1;
+	private LinearLayout myInnerLinearLayoutRangeBarSet1;
 	private RangeBar myRangeBar1;
+	private RangeBar myRangeBar2;
+	
+	private ImageView myRangeBarBoxImageView;
+	private ImageView myRangeBarBalloonImageView;
 	
 	private boolean isPrelimCheckSuccess;
 	
@@ -381,16 +386,34 @@ public class MainActivity extends ActionBarActivity {
 		//-----------------------------------------------------------------------
 		//Range Bar Set 1
 		//-----------------------------------------------------------------------		    	
-    	myLinearLayoutRangeBarSet1 = (LinearLayout) findViewById(R.id.linearlayout_box_range_bar_set);
-    	myRangeBar1 = (RangeBar) findViewById(R.id.rangebar1);
-    	int totalBarWidth = myLinearLayoutRangeBarSet1.getWidth();
-    	for (int i=0; i<totalBarWidth; i+=2) { //why 2? the gap between points is 2    		
-    		Log.d(">>>>barWidth", ""+i);
-    		TextView tv = new TextView(this);
-    		tv.setText("1");
-    		myLinearLayoutRangeBarSet1.addView(tv);    		
-    	}    	
+/*
+    	myInnerLinearLayoutRangeBarSet1 = (LinearLayout) findViewById(R.id.inner_linearlayout_box_range_bar_set);
+//    	myLinearLayoutRangeBarSet1.setOrientation(LinearLayout.HORIZONTAL);
     	
+    	myRangeBar1 = (RangeBar) findViewById(R.id.rangebar1);
+    	int totalBarWidth = myRangeBar1.getScrollBarSize();//myLinearLayoutRangeBarSet1.getWidth();
+    	//int sizePerBar = totalBarWidth/TOTAL_TICKS;
+    	int counter=-10;
+    	for (int i=0; i<TOTAL_TICKS; i++) {   		
+    		TextView tv = new TextView(this);
+    		if (i==0) {
+        		tv.setText(" "+Math.abs(counter)+" ");    			
+    		}
+    		else {
+        		tv.setText(Math.abs(counter)+" ");    			    			
+    		}
+    		if (counter<0) {
+    			tv.setTextColor(Color.RED);
+    		}
+    		else if (counter>0) {
+    			tv.setTextColor(Color.GREEN);    			
+    		}
+    		
+    		tv.setVisibility(TextView.VISIBLE);
+    		myInnerLinearLayoutRangeBarSet1.addView(tv);    		
+    		counter++;
+    	}    	
+*/    	
     	newButton = (Button)findViewById(R.id.new_button);    	
     	newButton.setOnClickListener(new OnClickListener() {
 			@Override
@@ -419,6 +442,7 @@ public class MainActivity extends ActionBarActivity {
 		updateEquations();		    	
 		resetBoxesAndBalloonsVisibility();
 		resetCounters();
+		hideRangeBarsSet();
 	}
 	
 	public void resetCounters() {
@@ -507,7 +531,6 @@ public class MainActivity extends ActionBarActivity {
 	//if yes, show the number line
 	//Note: (ax + b) and (cx + d)
 	public boolean processPrelimCheck() {
-		Log.d(">>>>","inside: processPrelimCheck(): currTotalBoxNumLeft; var_a: "+currTotalBoxNumLeft+"; "+var_a);
 		if (currTotalBoxNumLeft!=var_a) {
 			return false;
 		}
@@ -523,11 +546,35 @@ public class MainActivity extends ActionBarActivity {
 		
 		isPrelimCheckSuccess=true;		
 		removeSuperfluousBoxesAndBalloons();
-
-		Log.d(">>>>","inside: processPrelimCheck(): return true");
+		showRangeBarsSet();
+		
 		return true;
 	}	
+	
+	public void showRangeBarsSet() {
+		myRangeBar1 = (RangeBar)findViewById(R.id.rangebar1);    			
+		myRangeBar1.setVisibility(RangeBar.VISIBLE);		
+		myRangeBarBoxImageView = (ImageView)findViewById(R.id.range_bar_box);    			
+		myRangeBarBoxImageView.setVisibility(ImageView.VISIBLE);
 
+		myRangeBar2 = (RangeBar)findViewById(R.id.rangebar2);    			
+		myRangeBar2.setVisibility(RangeBar.VISIBLE);
+		myRangeBarBalloonImageView = (ImageView)findViewById(R.id.range_bar_balloon);    			
+		myRangeBarBalloonImageView.setVisibility(ImageView.VISIBLE);
+	}
+
+	public void hideRangeBarsSet() {
+		myRangeBar1 = (RangeBar)findViewById(R.id.rangebar1);    			
+		myRangeBar1.setVisibility(RangeBar.INVISIBLE);
+		myRangeBarBoxImageView = (ImageView)findViewById(R.id.range_bar_box);    			
+		myRangeBarBoxImageView.setVisibility(ImageView.INVISIBLE);
+
+		myRangeBar2 = (RangeBar)findViewById(R.id.rangebar2);    			
+		myRangeBar2.setVisibility(RangeBar.INVISIBLE);
+		myRangeBarBalloonImageView = (ImageView)findViewById(R.id.range_bar_balloon);    			
+		myRangeBarBalloonImageView.setVisibility(ImageView.INVISIBLE);
+	}
+	
 	public void resetBoxesAndBalloonsVisibility() {
 		for (int i=0; i<MAX_BOX; i++) { 
 			leftBox[i].setVisibility(ImageView.INVISIBLE);					

@@ -1998,7 +1998,7 @@ containing a value of this type.
         public static final int seek_thumb_pressed=0x7f020049;
     }
     public static final class id {
-        public static final int about=0x7f07008e;
+        public static final int about=0x7f070090;
         public static final int action_bar=0x7f070040;
         public static final int action_bar_activity_content=0x7f07001d;
         public static final int action_bar_container=0x7f07003f;
@@ -2013,15 +2013,15 @@ containing a value of this type.
         public static final int action_mode_bar_stub=0x7f07003c;
         public static final int action_mode_close_button=0x7f070025;
         public static final int activity_chooser_view_content=0x7f070026;
-        public static final int add_button=0x7f07008c;
+        public static final int add_button=0x7f07008e;
         public static final int alertTitle=0x7f070030;
         public static final int always=0x7f070012;
         public static final int beginning=0x7f070017;
-        public static final int bottom_buttons=0x7f070087;
+        public static final int bottom_buttons=0x7f070088;
         public static final int bottom_left_white_background=0x7f07006e;
         public static final int bottom_right_white_background=0x7f070077;
         public static final int buttonPanel=0x7f070036;
-        public static final int check_button=0x7f07008a;
+        public static final int check_button=0x7f07008c;
         public static final int checkbox=0x7f070038;
         public static final int collapseActionView=0x7f070014;
         public static final int contentPanel=0x7f070031;
@@ -2041,6 +2041,8 @@ containing a value of this type.
         public static final int icon=0x7f07002b;
         public static final int ifRoom=0x7f070011;
         public static final int image=0x7f070028;
+        public static final int inner_linearlayout_balloon_range_bar_set=0x7f07008a;
+        public static final int inner_linearlayout_box_range_bar_set=0x7f070086;
         public static final int left_balloon=0x7f07006b;
         public static final int left_balloon_1=0x7f07006f;
         public static final int left_balloon_2=0x7f070070;
@@ -2071,17 +2073,17 @@ containing a value of this type.
         public static final int middle=0x7f070018;
         public static final int multiply=0x7f07000e;
         public static final int never=0x7f070010;
-        public static final int new_button=0x7f07008b;
+        public static final int new_button=0x7f07008d;
         public static final int none=0x7f070004;
         public static final int normal=0x7f070001;
         public static final int parentPanel=0x7f07002d;
         public static final int progress_circular=0x7f070021;
         public static final int progress_horizontal=0x7f070022;
         public static final int radio=0x7f07003a;
-        public static final int range_bar_balloon=0x7f070089;
-        public static final int range_bar_box=0x7f070086;
+        public static final int range_bar_balloon=0x7f07008b;
+        public static final int range_bar_box=0x7f070087;
         public static final int rangebar1=0x7f070085;
-        public static final int rangebar2=0x7f070088;
+        public static final int rangebar2=0x7f070089;
         public static final int right_balloon=0x7f070080;
         public static final int right_balloon_1=0x7f070078;
         public static final int right_balloon_2=0x7f070079;
@@ -2127,7 +2129,7 @@ containing a value of this type.
         public static final int src_in=0x7f07000c;
         public static final int src_over=0x7f07000b;
         public static final int submit_area=0x7f07004b;
-        public static final int subtract_button=0x7f07008d;
+        public static final int subtract_button=0x7f07008f;
         public static final int tabMode=0x7f070003;
         public static final int textSpacerNoButtons=0x7f070033;
         public static final int title=0x7f07002c;
