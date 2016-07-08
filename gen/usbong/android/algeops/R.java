@@ -1998,7 +1998,7 @@ containing a value of this type.
         public static final int seek_thumb_pressed=0x7f020049;
     }
     public static final class id {
-        public static final int about=0x7f070090;
+        public static final int about=0x7f07009f;
         public static final int action_bar=0x7f070040;
         public static final int action_bar_activity_content=0x7f07001d;
         public static final int action_bar_container=0x7f07003f;
@@ -2016,10 +2016,18 @@ containing a value of this type.
         public static final int add_button=0x7f07008e;
         public static final int alertTitle=0x7f070030;
         public static final int always=0x7f070012;
+        public static final int balloon_green=0x7f070099;
+        public static final int balloon_green_with_red=0x7f07009d;
+        public static final int balloon_red=0x7f07009b;
+        public static final int balloon_red_with_green=0x7f07009e;
         public static final int beginning=0x7f070017;
         public static final int bottom_buttons=0x7f070088;
         public static final int bottom_left_white_background=0x7f07006e;
         public static final int bottom_right_white_background=0x7f070077;
+        public static final int box_green=0x7f070092;
+        public static final int box_green_with_red=0x7f070096;
+        public static final int box_red=0x7f070094;
+        public static final int box_red_with_green=0x7f070097;
         public static final int buttonPanel=0x7f070036;
         public static final int check_button=0x7f07008c;
         public static final int checkbox=0x7f070038;
@@ -2036,6 +2044,10 @@ containing a value of this type.
         public static final int end=0x7f070019;
         public static final int expand_activities_button=0x7f070027;
         public static final int expanded_menu=0x7f070037;
+        public static final int green_balloon_minus_button=0x7f070098;
+        public static final int green_box_minus_button=0x7f070091;
+        public static final int green_red_balloon_plus_button=0x7f07009c;
+        public static final int green_red_box_plus_button=0x7f070095;
         public static final int home=0x7f07001a;
         public static final int homeAsUp=0x7f070007;
         public static final int icon=0x7f07002b;
@@ -2066,6 +2078,7 @@ containing a value of this type.
         public static final int left_box_minus_button=0x7f070055;
         public static final int left_box_plus_button=0x7f070054;
         public static final int left_equation=0x7f070050;
+        public static final int left_white_background=0x7f070090;
         public static final int linearlayout_balloon_range_bar_set=0x7f070084;
         public static final int linearlayout_box_range_bar_set=0x7f070083;
         public static final int listMode=0x7f070002;
@@ -2084,6 +2097,8 @@ containing a value of this type.
         public static final int range_bar_box=0x7f070087;
         public static final int rangebar1=0x7f070085;
         public static final int rangebar2=0x7f070089;
+        public static final int red_balloon_minus_button=0x7f07009a;
+        public static final int red_box_minus_button=0x7f070093;
         public static final int right_balloon=0x7f070080;
         public static final int right_balloon_1=0x7f070078;
         public static final int right_balloon_2=0x7f070079;
@@ -2204,7 +2219,8 @@ containing a value of this type.
         public static final int select_dialog_item_material=0x7f03001b;
         public static final int select_dialog_multichoice_material=0x7f03001c;
         public static final int select_dialog_singlechoice_material=0x7f03001d;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001e;
+        public static final int subtract=0x7f03001e;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001f;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;

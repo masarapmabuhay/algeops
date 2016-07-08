@@ -26,11 +26,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+@SuppressWarnings("deprecation")
 public class MainMenuActivity extends ActionBarActivity
 {	
 	private Button addButton;
 	private Button subtractButton;
 	private Intent addIntent;
+	private Intent subtractIntent;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) 
@@ -53,6 +55,17 @@ public class MainMenuActivity extends ActionBarActivity
 			public void onClick(View v) {
 //				finish();
 				startActivity(addIntent);
+			}
+    	});    	
+    	
+    	subtractButton = (Button)findViewById(R.id.subtract_button);
+		subtractIntent = new Intent().setClass(this, SubtractActivity.class);
+		
+    	subtractButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+//				finish();
+				startActivity(subtractIntent);
 			}
     	});    	
     }
