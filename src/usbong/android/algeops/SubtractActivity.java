@@ -34,20 +34,21 @@ public class SubtractActivity extends ActionBarActivity {
 	
 	private int currTotalBoxNumLeft=0;
 	private int currTotalBoxNumLeftWithSign=0;
+	private int currTotalBoxPairNumLeft=0;
+	
+	private int currTotalBoxNumRight=0;
+
 	private int currTotalBalloonNumLeft=0;	
 	private int currTotalBalloonNumLeftWithSign=0;
-	private int currTotalBoxNumRight=0;
-	private int currTotalBalloonNumRight=0;	
-	
+	private int currTotalBalloonPairNumLeft=0;
+
+	private int currTotalBalloonNumRight=0;
+
 	private int currTotalBoxNumLeftCounter=0;
-	private int currTotalBoxNumRightCounter=0;
 	private int currTotalBalloonNumLeftCounter=0;
-	private int currTotalBalloonNumRightCounter=0;
 	
 	private int leftBoxOffset=0;
-	private int rightBoxOffset=0;
 	private int leftBalloonOffset=0;
-	private int rightBalloonOffset=0;
 
 	private ImageView[] leftBox;
 	private ImageView[] rightBox;
@@ -56,9 +57,11 @@ public class SubtractActivity extends ActionBarActivity {
 		
 	private Button greenBoxMinusButton;
 	private Button redBoxMinusButton;
+	private Button greenRedBoxPlusButton;
 
 	private Button greenBalloonMinusButton;
 	private Button redBalloonMinusButton;
+	private Button greenRedBalloonPlusButton;
 
 	private Button checkButton;
 	private Button newButton;	
@@ -176,11 +179,11 @@ public class SubtractActivity extends ActionBarActivity {
 					}
 					currTotalBoxNumLeftCounter=Math.abs(currTotalBoxNumLeft)-leftBoxOffset;						
 
-					if (currTotalBoxNumLeft>=0) { //if there are green boxes left						
+					if (currTotalBoxNumLeft>=0) { //if there are red boxes left						
 						leftBox[currTotalBoxNumLeftCounter].setVisibility(ImageView.INVISIBLE);					
 					}
 					else {
-						//sound error; no more green boxes to remove
+						//sound error; no more red boxes to remove
 /*						
 						leftBox[currTotalBoxNumLeftCounter].setBackground(getResources().getDrawable(getResources().getIdentifier("box_red", "drawable", getPackageName())));					
 						leftBox[currTotalBoxNumLeftCounter].setVisibility(ImageView.VISIBLE);
@@ -190,6 +193,43 @@ public class SubtractActivity extends ActionBarActivity {
 				processPrelimCheck();
 			}
     	});
+/*//TODO: work-in-progress
+    	greenRedBoxPlusButton = (Button)findViewById(R.id.green_red_box_plus_button);    	
+    	greenRedBoxPlusButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (isPrelimCheckSuccess) {
+	    			return;
+	    		}
+				
+				if (Math.abs(currTotalBoxNumLeft)<MAX_BOX-1) { //why -1? Because we are to add 2 boxes, green and red
+					currTotalBoxPairNumLeft++;
+					
+					currTotalBoxNumLeftWithSign++;
+					currTotalBoxNumLeft--;
+					
+					if (currTotalBoxNumLeft>=0) { //positive + 0
+						leftBoxOffset=0;
+					}
+					else {
+						leftBoxOffset=1;						
+					}
+					if (Math.abs(currTotalBoxNumLeft)>=MAX_BOX) {
+						currTotalBoxNumLeft=-(MAX_BOX);
+					}
+					currTotalBoxNumLeftCounter=Math.abs(currTotalBoxNumLeft)-leftBoxOffset;						
+
+					if (currTotalBoxNumLeft>=0) { //if there are green boxes left						
+						leftBox[currTotalBoxNumLeftCounter].setVisibility(ImageView.INVISIBLE);					
+					}
+					else {
+						//sound error; no more green boxes to remove
+					}										
+				}
+				processPrelimCheck();
+			}
+    	});
+*/
     	
     	greenBalloonMinusButton = (Button)findViewById(R.id.green_balloon_minus_button);    	
     	greenBalloonMinusButton.setOnClickListener(new OnClickListener() {
@@ -220,8 +260,11 @@ public class SubtractActivity extends ActionBarActivity {
 						leftBalloon[currTotalBalloonNumLeftCounter].setVisibility(ImageView.INVISIBLE);					
 					}
 					else {
+						//sound error; no more green boxes to remove
+/*						
 						leftBalloon[currTotalBalloonNumLeftCounter].setBackground(getResources().getDrawable(getResources().getIdentifier("balloon_red", "drawable", getPackageName())));					
 						leftBalloon[currTotalBalloonNumLeftCounter].setVisibility(ImageView.VISIBLE);
+*/						
 					}										
 				}
 				processPrelimCheck();
@@ -253,12 +296,15 @@ public class SubtractActivity extends ActionBarActivity {
 					}
 					currTotalBalloonNumLeftCounter=Math.abs(currTotalBalloonNumLeft)-leftBalloonOffset;						
 
-					if (currTotalBalloonNumLeft>=0) { //if there are green balloones left						
+					if (currTotalBalloonNumLeft>=0) { //if there are red balloons left						
 						leftBalloon[currTotalBalloonNumLeftCounter].setVisibility(ImageView.INVISIBLE);					
 					}
 					else {
+						//sound error; no more red boxes to remove
+/*						
 						leftBalloon[currTotalBalloonNumLeftCounter].setBackground(getResources().getDrawable(getResources().getIdentifier("balloon_red", "drawable", getPackageName())));					
 						leftBalloon[currTotalBalloonNumLeftCounter].setVisibility(ImageView.VISIBLE);
+*/						
 					}										
 				}
 				processPrelimCheck();
@@ -335,18 +381,12 @@ public class SubtractActivity extends ActionBarActivity {
 	public void resetCounters() {
 		currTotalBoxNumLeft=0;
 		currTotalBalloonNumLeft=0;	
-		currTotalBoxNumRight=0;
-		currTotalBalloonNumRight=0;	
 		
 		currTotalBoxNumLeftCounter=0;
-		currTotalBoxNumRightCounter=0;
 		currTotalBalloonNumLeftCounter=0;
-		currTotalBalloonNumRightCounter=0;
 		
 		leftBoxOffset=0;
-		rightBoxOffset=0;
 		leftBalloonOffset=0;
-		rightBalloonOffset=0;
 	}
 	
 	//References:
